@@ -8,10 +8,12 @@ function executeRating(stars, result) {
   const starClassUnactive = "rating__star far fa-star";
   const starsLength = stars.length;
   let i;
+  //pass the parameter
   stars.map((star) => {
     star.onclick = () => {
+      //to find the index of the click
       i = stars.indexOf(star);
-
+      // check if two values do not equal each other.
       if (star.className.indexOf(starClassUnactive) !== -1) {
         printRatingResult(result, i + 1);
         for (i; i >= 0; --i) stars[i].className = starClassActive;
@@ -23,7 +25,7 @@ function executeRating(stars, result) {
   });
 }
 
-function printRatingResult(result, num = 0) {
+function printRatingResult(result) {
   result.textContent = ``;
 }
 
